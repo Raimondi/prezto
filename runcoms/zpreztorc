@@ -34,6 +34,7 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'repos' \
+  'git' \
   'syntax-highlighting' \
   'prompt'
 
@@ -52,7 +53,7 @@ zstyle ':prezto:module:editor' keymap 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility
