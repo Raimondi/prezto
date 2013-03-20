@@ -12,3 +12,31 @@ fi
 
 # Customize to your needs...
 
+# Key-bindings
+bindkey '^[OA' history-beginning-search-backward
+bindkey '^[OB' history-beginning-search-forward
+
+# TaskWarrior completion
+fpath=($fpath /Users/israel/Documents/Source/task/scripts/zsh)
+autoload -Uz compinit
+compinit
+
+# be verbose, i.e. show descriptions
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+
+# group by tag names
+zstyle ':completion:*' group-name ''
+
+# Customize to your needs...
+# Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export EDITOR=$HOME/bin/vim
+export VISUAL=$HOME/bin/vim
+export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
+eval $( gdircolors -b $HOME/.dircolors )
+
+function tmux_create_or_reattach() { tmux has-session -t $1 && tmux attach -t $1 || tmux -u -L $1; }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
