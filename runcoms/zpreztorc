@@ -34,15 +34,11 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'repos' \
-<<<<<<< HEAD
   'git' \
   'safe_paste' \
   'syntax-highlighting' \
   'terminal' \
   'alert' \
-=======
-  'syntax-highlighting' \
->>>>>>> Enable syntax highlighting.
   'prompt'
 
 #
