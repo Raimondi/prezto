@@ -38,6 +38,13 @@ ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=yellow
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=yellow
 ZSH_HIGHLIGHT_STYLES[path]=fg=blue
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=cyan
+bindkey '^[OA' history-beginning-search-backward
+bindkey '^[OB' history-beginning-search-forward
+
+# TaskWarrior completion
+fpath=($fpath /Users/israel/Documents/Source/task/scripts/zsh)
+autoload -Uz compinit
+compinit
 
 # be verbose, i.e. show descriptions
 zstyle ':completion:*' verbose yes
@@ -65,3 +72,15 @@ function tmux_create_or_reattach() { tmux has-session -t $1 && tmux attach -t $1
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Customize to your needs...
+# Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export EDITOR=$HOME/bin/vim
+export VISUAL=$HOME/bin/vim
+export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
+eval $( gdircolors -b $HOME/.dircolors )
+
+function tmux_create_or_reattach() { tmux has-session -t $1 && tmux attach -t $1 || tmux -u -L $1; }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
