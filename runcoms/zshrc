@@ -21,6 +21,12 @@ fpath=($fpath /Users/israel/Documents/Source/task/scripts/zsh)
 autoload -Uz compinit
 compinit
 
+# Syntax highlighting
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=yellow
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=yellow
+ZSH_HIGHLIGHT_STYLES[path]=fg=blue
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=cyan
+
 # be verbose, i.e. show descriptions
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
