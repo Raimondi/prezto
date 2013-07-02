@@ -21,6 +21,7 @@ fpath=($fpath /Users/israel/Documents/Source/task/scripts/zsh)
 autoload -Uz compinit
 compinit
 
+alias ccat=/opt/local/bin/pygmentize-2.7 -g
 # Syntax highlighting
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=yellow
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=yellow
@@ -40,8 +41,8 @@ zstyle ':completion:*' group-name ''
 
 # XQuartz libs are not in the usual place.
 CPLUS_INCLUDE_PATH=/usr/X11R6/include; export CPLUS_INCLUDE_PATH
-export EDITOR=$HOME/bin/vim
-export VISUAL=$HOME/bin/vim
+export EDITOR=vim
+export VISUAL=vim
 export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
 eval $( gdircolors -b $HOME/.dircolors )
 
