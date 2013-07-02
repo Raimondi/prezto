@@ -1,0 +1,25 @@
+#
+# Highlights diff output.
+#
+# Authors:
+#   Israel Chauca <israelchauca@gmail.com>
+#
+CHECKSUMS=(md2 md4 md5 mdc2 ripemd160 sha sha1 sha224 sha256 sha384 sha512 whirlpool)
+
+function checksum {
+  foreach file ($@); do
+    if [[ ! -a "$file" ]]; then
+      echo "$file doesn't exists"
+    else
+      echo "File: $file"
+      for cs in $CHECKSUMS; do
+        openssl dgst -$cs "$file" 2>/dev/null |\
+          sed -e "s/^.*= /$cs /" -e "s/ripemd160/rdm160/"
+      done
+    fi
+  done
+}
+
+checksum $@
+
+# vi: set et sw=2 ft=zsh:
