@@ -82,3 +82,5 @@ fi
 # http://www.network-theory.co.uk/docs/gccintro/gccintro_23.html
 CPLUS_INCLUDE_PATH=/usr/X11R6/include
 export CPLUS_INCLUDE_PATH
+
+#source ~/.zprezto/modules/path/init.zsh
