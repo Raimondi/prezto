@@ -14,7 +14,7 @@ function checksum {
       echo "File: $file"
       for cs in $CHECKSUMS; do
         openssl dgst -$cs "$file" 2>/dev/null |\
-          sed -e "s/^.*= /$cs /" -e "s/ripemd160/rdm160/"
+          sed -e "s/^.*= /$cs /" -e "s/ripemd160/rmd160/"
       done
     fi
   done

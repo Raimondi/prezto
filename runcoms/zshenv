@@ -74,3 +74,4 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+source ~/.zprezto/modules/path/init.zsh

@@ -12,8 +12,8 @@ common_paths=(
   #/usr/games					# fun stuff
   #/var/qmail/bin				# qmail - uncomment if desired
   #/usr/platform/$(uname -i)/sbin		# solaris - hardware dependent
-  #/usr/ccs/bin				# solaris - C Compilation System
-  #/sw/bin /sw/sbin                            # Mac OS X - fink
+  #/usr/ccs/bin					# solaris - C Compilation System
+  /sw/bin /sw/sbin                      	# Mac OS X - fink
   /opt/local/bin /opt/local/sbin /opt/SUNWspro/bin	# solaris
   /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin
   #/usr/xpg4/bin /usr/xpg6/bin			# solaris - X/Open Portability Guide
@@ -22,7 +22,7 @@ common_paths=(
   #/usr/pkg/bin /usr/pkg/sbin			# ???
   /usr/X11R6/bin				# X11
   /usr/local/bin /usr/local/sbin		# freeBSD
-  /bin /sbin /usr/bin /usr/sbin		# good places to look
+  /bin /sbin /usr/bin /usr/sbin			# good places to look
   ${path} ${=$(command -p getconf PATH 2> /dev/null)//:/ } # what the system thinks PATH should be
   )
 unset PATH_tmp
