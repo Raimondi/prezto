@@ -13,13 +13,24 @@ fi
 # Customize to your needs...
 
 # Key-bindings
-bindkey '^[OA' history-beginning-search-backward
-bindkey '^[OB' history-beginning-search-forward
+# bind UP and DOWN arrow keys
+#zmodload zsh/terminfo
+bindkey "$key_info[Up]" history-beginning-search-backward
+bindkey "$key_info[Down]" history-beginning-search-forward
 
-# TaskWarrior completion
-fpath=($fpath /Users/israel/Documents/Source/task/scripts/zsh)
-autoload -Uz compinit
-compinit
+# Fix keys for iTerm
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 alias ccat=/opt/local/bin/pygmentize-2.7 -g
 # Syntax highlighting
@@ -44,7 +55,7 @@ CPLUS_INCLUDE_PATH=/usr/X11R6/include; export CPLUS_INCLUDE_PATH
 export EDITOR=vim
 export VISUAL=vim
 export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
-eval $( gdircolors -b $HOME/.dircolors )
+[[ -s "$HOME/.dircolors" ]] && eval $( gdircolors -b $HOME/.dircolors )
 
 function tmux_create_or_reattach() { tmux has-session -t $1 && tmux attach -t $1 || tmux -u -L $1; }
 

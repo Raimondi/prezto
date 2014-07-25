@@ -35,9 +35,10 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'repos' \
   'git' \
+  'safe_paste' \
   'syntax-highlighting' \
   'terminal' \
-  'safe_paste' \
+  'alert' \
   'prompt'
 
 #
