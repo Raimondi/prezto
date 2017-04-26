@@ -104,6 +104,9 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'steeef'
 
+# Display pwd in long format for themes that use promptpwd function
+# zstyle ':prezto:module:prompt' long-pwd 'yes'
+
 #
 # Ruby
 #
