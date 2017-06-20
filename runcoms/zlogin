@@ -16,7 +16,18 @@
 
 # Print a random, hopefully interesting, adage.
 if (( $+commands[fortune] )); then
-  fortune -a
+  fortune="fortune -a"
+  if (( $+commands[cowsay] )); then
+    sort="sort"
+    if (( $+commands[gsort] )); then
+      sort="gsort"
+    fi
+    fortune="$fortune | cowsay -f \"$(ls /opt/local/share/cowsay/cows/ | $sort -R | head -1)\""
+  fi
+  if (( $+commands[lolcat] )); then
+    fortune="$fortune | lolcat"
+  fi
+  eval $fortune
   print
 fi
 

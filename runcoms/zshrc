@@ -46,17 +46,22 @@ zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 # group by tag names
 zstyle ':completion:*' group-name ''
 
+#zstyle ':prezto:module:alert' alert 'whence say &>/dev/null && say -v Alex "The command %c has finished." && osascript -e "display notification \"The command, %c, has finished.\""'
+zstyle ':prezto:module:alert' alert 'osascript -e "display notification \"The command, %c, has finished.\""'
+zstyle ':prezto:module:alert' time 10
 # Customize to your needs...
 # Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # XQuartz libs are not in the usual place.
 CPLUS_INCLUDE_PATH=/usr/X11R6/include; export CPLUS_INCLUDE_PATH
 export EDITOR=vim
 export VISUAL=vim
-export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
+export VIDIR_EDITOR_ARGS='-c set ft=vidir-ls'
 [[ -s "$HOME/.dircolors" ]] && eval $( gdircolors -b $HOME/.dircolors )
 
 function tmux_create_or_reattach() { tmux has-session -t $1 && tmux attach -t $1 || tmux -u -L $1; }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

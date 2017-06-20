@@ -261,7 +261,7 @@ bindkey -M viins "^F" _history-complete-older
 bindkey "^S" prepend-sudo
 
 # Prepend "vim ".  This does not have a Vim parallel.
-bindkey "^V" prepend-vim
+#bindkey "^V" prepend-vim
 
 # Have i_ctrl-u work as it does in Vim.
 bindkey -M viins "^U" backward-kill-line
