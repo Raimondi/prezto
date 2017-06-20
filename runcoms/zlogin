@@ -24,6 +24,14 @@ if (( $+commands[fortune] )); then
     fi
     fortune="$fortune | cowsay -f \"$(ls /opt/local/share/cowsay/cows/ | $sort -R | head -1)\""
   fi
+  fortune="fortune -a"
+  if (( $+commands[cowsay] )); then
+    sort="sort"
+    if (( $+commands[gsort] )); then
+      sort="gsort"
+    fi
+    fortune="$fortune | cowsay -f \"$(ls /opt/local/share/cowsay/cows/ | $sort -R | head -1)\""
+  fi
   if (( $+commands[lolcat] )); then
     fortune="$fortune | lolcat"
   fi
